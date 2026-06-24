@@ -140,7 +140,7 @@ export default function GallerySection() {
     <div className="space-y-6" id="gallery-content">
 
       {/* CATEGORY FILTER PILLS */}
-      <div className="w-full flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-thin" id="gallery-filters">
+      <div className="w-full flex items-center gap-2 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-thin" id="gallery-filters">
         {categories.map((cat) => {
           const count = cat === "All" ? GALLERY_IMAGES.length : GALLERY_IMAGES.filter((i) => i.category === cat).length;
           return (
@@ -168,8 +168,7 @@ export default function GallerySection() {
         {/* Main Slide Area */}
         <div
           ref={sliderRef}
-          className="relative w-full overflow-hidden cursor-grab active:cursor-grabbing select-none"
-          style={{ aspectRatio: "16 / 10" }}
+          className="relative w-full aspect-[4/5] sm:aspect-[16/10] overflow-hidden cursor-grab active:cursor-grabbing select-none"
           onMouseDown={(e) => handleDragStart(e.clientX)}
           onMouseMove={(e) => handleDragMove(e.clientX)}
           onMouseUp={handleDragEnd}
@@ -204,11 +203,11 @@ export default function GallerySection() {
 
           {/* Bottom info overlay */}
           <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none">
-            <div className="p-4 sm:p-6">
+            <div className="p-4 pb-9 sm:p-6 sm:pb-10">
               <span className="inline-block bg-[#d32f2f] text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md font-mono mb-1.5">
                 {filteredImages[currentSlide]?.category}
               </span>
-              <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg leading-snug max-w-xl">
+              <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg leading-snug max-w-xl line-clamp-2">
                 {filteredImages[currentSlide]?.alt}
               </h3>
               <p className="text-white/50 text-[10px] sm:text-xs font-mono mt-1">
@@ -328,7 +327,7 @@ export default function GallerySection() {
 
             {/* Caption */}
             <div className="mt-3 sm:mt-4 text-center flex-shrink-0">
-              <p className="text-white font-bold text-sm sm:text-lg">{lightboxImage.alt}</p>
+              <p className="text-white font-bold text-sm sm:text-lg leading-snug break-words">{lightboxImage.alt}</p>
               <span className="text-white/40 text-[10px] sm:text-xs font-mono uppercase tracking-wider">
                 {lightboxImage.category} • {GALLERY_IMAGES.findIndex((i) => i.id === lightboxImage.id) + 1} / {GALLERY_IMAGES.length}
               </span>

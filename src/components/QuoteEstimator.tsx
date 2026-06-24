@@ -114,14 +114,14 @@ Please confirm my plumbing technician slot. Thank you!`;
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden max-w-4xl mx-auto" id="booking-form-wrapper">
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl overflow-hidden max-w-4xl mx-auto" id="booking-form-wrapper">
       {/* Header Accent Bar */}
-      <div className="bg-[#0f1c3f] text-white p-6 sm:p-8 flex items-center justify-between border-b border-[#d32f2f]/30">
-        <div className="space-y-1">
+      <div className="bg-[#0f1c3f] text-white p-4 min-[380px]:p-5 sm:p-8 flex items-center justify-between gap-4 border-b border-[#d32f2f]/30">
+        <div className="space-y-1 min-w-0">
           <span className="text-[10px] uppercase font-bold tracking-widest text-slate-300 font-mono block">
             Direct Dispatch Scheduler
           </span>
-          <h3 className="font-display font-black text-xl sm:text-2xl text-white">
+          <h3 className="font-display font-black text-lg min-[380px]:text-xl sm:text-2xl text-white leading-tight">
             SV Plumbing Appointment Form
           </h3>
         </div>
@@ -133,16 +133,16 @@ Please confirm my plumbing technician slot. Thank you!`;
         </div>
       </div>
 
-      <div className="p-6 sm:p-8" id="booking-card-body">
+      <div className="p-4 min-[380px]:p-5 sm:p-8" id="booking-card-body">
         {successBooking ? (
           /* SUCCESS STATE PANEL */
-          <div className="text-center py-10 px-4 flex flex-col items-center justify-center space-y-6 animate-scaleIn" id="estimator-success-screen">
+          <div className="text-center py-8 sm:py-10 px-1 sm:px-4 flex flex-col items-center justify-center space-y-6 animate-scaleIn" id="estimator-success-screen">
             <div className="h-16 w-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center shadow-md">
               <CheckCircle className="w-10 h-10 stroke-[2.5]" />
             </div>
             
             <div className="space-y-2">
-              <h3 className="font-display font-black text-2xl text-slate-900 leading-tight">
+              <h3 className="font-display font-black text-xl sm:text-2xl text-slate-900 leading-tight">
                 Your Request has been Sent!
               </h3>
               <p className="text-sm text-slate-500 max-w-md mx-auto">
@@ -151,19 +151,19 @@ Please confirm my plumbing technician slot. Thank you!`;
             </div>
 
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 w-full max-w-md text-left font-mono text-xs space-y-2 text-slate-700 shadow-inner">
-              <div className="flex justify-between border-b border-slate-200 pb-2">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between gap-1 border-b border-slate-200 pb-2">
                 <span className="font-bold text-slate-500">REQUEST ID:</span>
-                <span className="font-black text-[#d32f2f]">{successBooking.id}</span>
+                <span className="font-black text-[#d32f2f] break-all">{successBooking.id}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between gap-1">
                 <span>Selected Colony:</span>
                 <span className="font-bold text-slate-900">{successBooking.colony}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between gap-1">
                 <span>Scheduled Date:</span>
                 <span className="font-bold text-slate-900">{successBooking.date}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex flex-col min-[380px]:flex-row min-[380px]:justify-between gap-1">
                 <span>Preferred Slot:</span>
                 <span className="font-bold text-slate-900">{successBooking.timeSlot}</span>
               </div>
@@ -206,7 +206,7 @@ Please confirm my plumbing technician slot. Thank you!`;
             )}
 
             {/* Inputs grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {/* Name */}
               <div className="space-y-1.5">
                 <label className="text-xs font-black text-slate-700 uppercase tracking-wider flex items-center space-x-1">
@@ -283,7 +283,7 @@ Please confirm my plumbing technician slot. Thank you!`;
                   <Clock className="w-3.5 h-3.5 text-slate-400" />
                   <span>Preferred Visit Time Slot</span>
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="form-timeslot-group">
+                <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-4 gap-2.5" id="form-timeslot-group">
                   {[
                     "09:00 AM - 12:00 PM",
                     "12:00 PM - 03:00 PM",
@@ -294,7 +294,7 @@ Please confirm my plumbing technician slot. Thank you!`;
                       key={slot}
                       type="button"
                       onClick={() => setTimeSlot(slot)}
-                      className={`py-3 px-1 text-[11px] font-bold rounded-xl border transition-all text-center ${
+                      className={`py-3 px-2 text-[11px] font-bold rounded-xl border transition-all text-center ${
                         timeSlot === slot
                           ? "bg-[#0f1c3f] border-[#0f1c3f] text-white shadow-sm"
                           : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
@@ -357,7 +357,7 @@ Please confirm my plumbing technician slot. Thank you!`;
                   </>
                 ) : (
                   <>
-                    <span>Submit & Open WhatsApp Chat</span>
+                    <span className="text-center leading-tight">Submit & Open WhatsApp Chat</span>
                     <ArrowRight className="w-4.5 h-4.5 stroke-[2.5]" />
                   </>
                 )}

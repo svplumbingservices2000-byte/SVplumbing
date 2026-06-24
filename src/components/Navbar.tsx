@@ -55,23 +55,23 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
       id="main-header"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-3">
           {/* Logo and Brand Name */}
           <div
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex min-w-0 items-center space-x-2.5 sm:space-x-3 cursor-pointer group"
             onClick={() => handleNav("hero")}
             id="nav-brand"
           >
             <img
               src={svLogoImg}
               alt="SV Plumbing Logo"
-              className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-full object-cover ring-2 ring-[#ef4444]/40 transition-transform duration-300 group-hover:scale-105"
+              className="w-9 h-9 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-full object-cover ring-2 ring-[#ef4444]/40 transition-transform duration-300 group-hover:scale-105 shrink-0"
             />
-            <div className="flex flex-col">
-              <span className="font-display text-lg sm:text-2xl font-extrabold tracking-tight leading-none text-white">
+            <div className="flex min-w-0 flex-col">
+              <span className="font-display text-base min-[380px]:text-lg sm:text-2xl font-extrabold tracking-tight leading-none text-white truncate">
                 SV PLUMBING
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[#ef4444] leading-none mt-1">
+              <span className="text-[9px] min-[380px]:text-[10px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-widest text-[#ef4444] leading-none mt-1 truncate">
                 Services • Hyderabad
               </span>
             </div>
@@ -124,21 +124,21 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
           </div>
 
           {/* Mobile Right Controls — visible below md */}
-          <div className="flex items-center space-x-2 md:hidden" id="mobile-controls">
+          <div className="flex shrink-0 items-center space-x-2 md:hidden" id="mobile-controls">
             <a
               href="tel:+918008693712"
-              className="p-2.5 bg-[#FFA000] rounded-full text-black hover:bg-[#E08F00]"
+              className="p-2 sm:p-2.5 bg-[#FFA000] rounded-full text-black hover:bg-[#E08F00]"
               title="Call Us Now"
               id="mobile-call-icon"
             >
-              <Phone className="w-5 h-5 text-black stroke-[2.5]" />
+              <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-black stroke-[2.5]" />
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
               id="mobile-menu-btn"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5.5 h-5.5 sm:w-6 sm:h-6" /> : <Menu className="w-5.5 h-5.5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
       {/* Mobile Drawer — backdrop + slide-down panel */}
       {/* Backdrop overlay */}
       <div
-        className={`fixed inset-0 top-20 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 top-16 sm:top-20 bg-black/50 z-40 md:hidden transition-opacity duration-300 ${
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
@@ -156,7 +156,7 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
 
       {/* Drawer panel */}
       <div
-        className={`absolute left-0 right-0 top-full z-50 md:hidden bg-[#0d1733] border-t border-[#d32f2f]/30 px-4 pt-2 pb-6 space-y-2 transform transition-all duration-300 ease-in-out origin-top ${
+        className={`absolute left-0 right-0 top-full z-50 md:hidden bg-[#0d1733] border-t border-[#d32f2f]/30 px-4 pt-2 pb-6 space-y-2 max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto transform transition-all duration-300 ease-in-out origin-top ${
           isOpen
             ? "opacity-100 translate-y-0 scale-y-100"
             : "opacity-0 -translate-y-2 scale-y-95 pointer-events-none"
@@ -169,7 +169,7 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
             <button
               key={item.id}
               onClick={() => handleNav(item.id)}
-              className={`flex items-center w-full text-left px-4 py-3 rounded-md text-base font-medium transition-all ${
+              className={`flex items-center w-full text-left px-4 py-3 rounded-md text-sm min-[380px]:text-base font-medium transition-all ${
                 activeSection === item.id
                   ? "bg-[#d32f2f]/10 text-[#ef4444] border-l-[3px] border-[#ef4444]"
                   : "text-slate-300 hover:bg-white/5 hover:text-white border-l-[3px] border-transparent"
@@ -189,7 +189,7 @@ export default function Navbar({ onNavClick, activeSection, onRequestClick }: Na
             id="mobile-call-btn-drawer"
           >
             <Phone className="w-4 h-4 text-black stroke-[2.5]" />
-            <span>Call Now: +91 80086 93712</span>
+            <span className="truncate">Call Now: +91 80086 93712</span>
           </a>
           <a
             href="https://wa.me/918008693712?text=Hello SV Plumbing! I want to request a plumber."

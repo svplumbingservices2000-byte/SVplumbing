@@ -27,7 +27,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-8 space-y-10" id="about-us-section">
+    <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl p-4 min-[380px]:p-5 sm:p-8 space-y-8 sm:space-y-10" id="about-us-section">
       {/* Intro Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left: Content (7 Cols) */}
@@ -36,7 +36,7 @@ export default function AboutSection() {
             <span className="text-xs font-bold text-[#d32f2f] uppercase tracking-widest font-mono block">
               Established 2011 • Hyderabad
             </span>
-            <h3 className="font-display font-black text-3xl text-slate-900 leading-tight">
+            <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 leading-tight">
               About SV Plumbing Services
             </h3>
           </div>
@@ -50,17 +50,17 @@ export default function AboutSection() {
           </p>
 
           {/* Quick Stats banner */}
-          <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 border-t border-slate-100 pt-6">
             <div>
-              <div className="text-3xl font-black text-[#0f1c3f] font-mono">15k+</div>
+              <div className="text-2xl sm:text-3xl font-black text-[#0f1c3f] font-mono">15k+</div>
               <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider mt-1">Jobs Completed</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-[#d32f2f] font-mono">15+</div>
+              <div className="text-2xl sm:text-3xl font-black text-[#d32f2f] font-mono">15+</div>
               <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider mt-1">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-emerald-600 font-mono">100%</div>
+              <div className="text-2xl sm:text-3xl font-black text-emerald-600 font-mono">100%</div>
               <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider mt-1">Verified Plumbers</div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function AboutSection() {
           {values.map((v, i) => (
             <div 
               key={i} 
-              className="flex items-start space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 hover:shadow-md transition-shadow"
+              className="flex flex-col min-[380px]:flex-row items-start gap-4 p-4 sm:p-5 bg-slate-50 rounded-2xl border border-slate-200/60 hover:shadow-md transition-shadow"
               id={`about-value-card-${i}`}
             >
               <div className="p-3 bg-white border border-slate-200 rounded-xl shrink-0 shadow-sm">

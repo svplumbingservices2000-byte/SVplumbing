@@ -20,7 +20,7 @@ export default function ContactSection() {
       {/* Left Column: Direct Call, WhatsApp & Hours (5 Cols) */}
       <div className="lg:col-span-5 space-y-6" id="contact-details-side">
         {/* Main Details Card */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-8 space-y-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl p-4 min-[380px]:p-5 sm:p-8 space-y-6">
           <div>
             <h3 className="font-display font-extrabold text-2xl text-slate-900">
               SV Plumbing Hotline
@@ -32,17 +32,17 @@ export default function ContactSection() {
 
           <div className="space-y-4 text-sm text-slate-600">
             {/* Direct Phone Block (Enhanced) */}
-            <div className="bg-rose-50/50 border border-rose-100 rounded-2xl p-4.5 flex items-start space-x-3.5 hover:shadow-md transition-shadow">
+            <div className="bg-rose-50/50 border border-rose-100 rounded-2xl p-4 flex items-start gap-3.5 hover:shadow-md transition-shadow">
               <div className="p-3 bg-[#d32f2f] text-white rounded-xl shrink-0 mt-0.5 shadow-sm">
                 <PhoneCall className="w-5 h-5 animate-pulse" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-bold text-[#d32f2f] text-[11px] uppercase tracking-wide block mb-0.5 font-mono">
                   Primary Emergency Hotline
                 </span>
                 <a
                   href="tel:+918008693712"
-                  className="text-2xl font-black text-[#0f1c3f] hover:text-[#d32f2f] transition-colors font-mono block tracking-tight"
+                  className="text-xl min-[380px]:text-2xl font-black text-[#0f1c3f] hover:text-[#d32f2f] transition-colors font-mono block tracking-tight break-all"
                 >
                   +91 80086 93712
                 </a>
@@ -51,11 +51,11 @@ export default function ContactSection() {
             </div>
 
             {/* Direct WhatsApp Block (Enhanced) */}
-            <div className="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-4.5 flex items-start space-x-3.5 hover:shadow-md transition-shadow">
+            <div className="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-4 flex items-start gap-3.5 hover:shadow-md transition-shadow">
               <div className="p-3 bg-[#00A884] text-white rounded-xl shrink-0 mt-0.5 shadow-sm">
                 <WhatsAppIcon className="w-5 h-5 fill-white" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-bold text-emerald-700 text-[11px] uppercase tracking-wide block mb-0.5 font-mono">
                   WhatsApp Support
                 </span>
@@ -119,7 +119,7 @@ export default function ContactSection() {
       </div>
 
       {/* Right Column: Office Location Map & Suburbs Coverage (7 Cols) */}
-      <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-8 flex flex-col justify-between space-y-6" id="contact-coverage-side">
+      <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl p-4 min-[380px]:p-5 sm:p-8 flex flex-col justify-between space-y-6" id="contact-coverage-side">
         {/* Map Vector layout */}
         <div className="space-y-3">
           <h4 className="font-display font-extrabold text-lg text-slate-900">
@@ -130,7 +130,7 @@ export default function ContactSection() {
           </p>
 
           {/* Map Graphic container */}
-          <div className="relative h-[250px] bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-inner flex items-center justify-center group" id="coverage-map-graphic">
+          <div className="relative h-[220px] sm:h-[250px] bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-inner flex items-center justify-center group" id="coverage-map-graphic">
             {/* Styled roads grid overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px]"></div>
             
@@ -153,16 +153,16 @@ export default function ContactSection() {
             </div>
 
             {/* Labels floating on Map */}
-            <div className="absolute top-12 left-8 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
+            <div className="absolute top-10 left-3 min-[390px]:left-8 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[8px] sm:text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
               SRINAGAR COLONY
             </div>
-            <div className="absolute bottom-12 right-12 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
+            <div className="absolute bottom-10 right-3 min-[390px]:right-12 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[8px] sm:text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
               KOTHAPET CROSS ROAD
             </div>
-            <div className="absolute top-1/2 right-10 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
+            <div className="absolute top-1/2 right-4 min-[390px]:right-10 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[8px] sm:text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
               MOHAN NAGAR
             </div>
-            <div className="absolute bottom-8 left-16 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
+            <div className="absolute bottom-7 left-3 min-[390px]:left-16 bg-white/95 border border-slate-200 px-2.5 py-1 rounded-md text-[8px] sm:text-[9px] font-extrabold text-slate-600 shadow-sm font-mono">
               VIJAYAPURI COLONY
             </div>
 
@@ -189,7 +189,7 @@ export default function ContactSection() {
         </div>
 
         {/* Direct Callback CTA prompt */}
-        <div className="border-t border-slate-100 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-slate-100 pt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
           <div className="text-left text-xs text-slate-500">
             <strong>Immediate assistance required?</strong> We recommend calling our hotline or initiating a WhatsApp chat immediately.
           </div>

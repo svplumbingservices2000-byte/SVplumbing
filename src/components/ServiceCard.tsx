@@ -67,16 +67,16 @@ export default function ServiceCard({ service, isSelected, onToggleSelect, onVie
 
   return (
     <div
-      className={`relative flex flex-col justify-between p-6 rounded-2xl border-2 transition-all duration-300 ${
+      className={`relative flex flex-col justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 transition-all duration-300 ${
         isSelected
-          ? "border-[#d32f2f] bg-white shadow-lg scale-[1.02] ring-1 ring-[#d32f2f]/30"
+          ? "border-[#d32f2f] bg-white shadow-lg sm:scale-[1.02] ring-1 ring-[#d32f2f]/30"
           : `border-slate-200 bg-white hover:border-slate-300 hover:shadow-md`
       }`}
       id={`service-card-${service.id}`}
     >
       {/* Category Tag & Detail Button */}
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md font-mono">
+      <div className="flex items-center justify-between gap-3 mb-4">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md font-mono truncate">
           {service.category}
         </span>
         <button
@@ -95,7 +95,7 @@ export default function ServiceCard({ service, isSelected, onToggleSelect, onVie
           <IconComponent className="w-5 h-5 stroke-[2.25]" />
         </div>
         <div>
-          <h3 className="font-display font-bold text-slate-900 leading-tight text-base sm:text-md">
+          <h3 className="font-display font-bold text-slate-900 leading-tight text-base">
             {service.name}
           </h3>
           <p className="text-slate-500 text-xs mt-1.5 line-clamp-2">
