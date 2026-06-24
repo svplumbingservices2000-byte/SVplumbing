@@ -91,9 +91,12 @@ export default function App() {
             {/* Left text column */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left" id="hero-text-block">
               {/* Trust Badge */}
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-xs font-bold text-slate-100" id="hero-badge">
-                <ShieldCheck className="w-4.5 h-4.5 text-emerald-400" />
-                <span className="font-mono uppercase tracking-wider">#1 Plumbing Service in East Hyderabad</span>
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/15 text-[10px] sm:text-xs font-bold text-slate-100" id="hero-badge">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-emerald-400" />
+                <span className="font-mono uppercase tracking-wider">
+                  <span className="inline sm:hidden">#1 Plumber in East Hyderabad</span>
+                  <span className="hidden sm:inline">#1 Plumbing Service in East Hyderabad</span>
+                </span>
               </div>
 
               {/* Catchy headline */}
@@ -149,9 +152,11 @@ export default function App() {
               </div>
 
               {/* Direct call banner */}
-              <div className="flex items-center justify-center lg:justify-start space-x-3 text-slate-300 text-xs font-mono pt-2" id="hero-call-footer">
-                <Phone className="w-4 h-4 text-[#ef4444]" />
-                <span>Immediate Emergency Hotline:</span>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-slate-300 text-xs font-mono pt-2" id="hero-call-footer">
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-[#ef4444]" />
+                  <span>Immediate Emergency Hotline:</span>
+                </div>
                 <a href="tel:+918008693712" className="font-extrabold text-[#ef4444] hover:underline hover:scale-102 transition-transform">
                   +91 80086 93712
                 </a>
@@ -272,7 +277,7 @@ export default function App() {
           </div>
 
           {/* Category Navigation Pills */}
-          <div className="flex items-center space-x-1.5 overflow-x-auto pb-3 scrollbar-thin" id="category-scroller">
+          <div className="w-full flex items-center space-x-1.5 overflow-x-auto pb-3 scrollbar-thin" id="category-scroller">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -403,30 +408,36 @@ export default function App() {
       </main>
 
       {/* BRAND PERSISTENT FLOATING OVERLAPPING CALL & WHATSAPP WIDGET (Exactly like the uploaded screenshot) */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-3 pointer-events-none" id="floating-brand-widget">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 sm:space-y-3 pointer-events-none" id="floating-brand-widget">
         {/* Call Now Button (stacked above WhatsApp, Orange background, black text, with outline phone icon) */}
         <div className="pointer-events-auto transform hover:scale-105 active:scale-95 transition-all">
           <a
             href="tel:+918008693712"
-            className="flex items-center space-x-3 bg-[#FFA000] hover:bg-[#E08F00] text-black px-6 py-3.5 sm:px-7 sm:py-4 rounded-full text-sm sm:text-base font-black tracking-wide shadow-2xl border border-black/10 whitespace-nowrap"
+            className="flex items-center space-x-2 sm:space-x-3 bg-[#FFA000] hover:bg-[#E08F00] text-black px-4 py-2.5 sm:px-7 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-black/10 whitespace-nowrap"
             id="sticky-call-now-btn"
           >
-            <Phone className="w-5 h-5 sm:w-5.5 sm:h-5.5 text-black stroke-[2.5]" />
-            <span>Call Now: +91 80086 93712</span>
+            <Phone className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 text-black stroke-[2.5]" />
+            <span>
+              <span className="inline sm:hidden">Call Now</span>
+              <span className="hidden sm:inline">Call Now: +91 80086 93712</span>
+            </span>
           </a>
         </div>
 
         {/* WhatsApp Button (slightly shifted right, Green background, white text, with official logo) */}
-        <div className="pointer-events-auto transform hover:scale-105 active:scale-95 transition-all -mt-1 mr-3 sm:mr-4">
+        <div className="pointer-events-auto transform hover:scale-105 active:scale-95 transition-all -mt-1 mr-2 sm:mr-4">
           <a
             href="https://wa.me/918008693712?text=Hello SV Plumbing! I want to book a plumbing service."
             target="_blank"
             rel="noreferrer"
-            className="flex items-center space-x-3 bg-[#00A884] hover:bg-[#009675] text-white px-6 py-3.5 sm:px-7 sm:py-4 rounded-full text-sm sm:text-base font-black tracking-wide shadow-2xl border border-[#00A884]/20 whitespace-nowrap"
+            className="flex items-center space-x-2 sm:space-x-3 bg-[#00A884] hover:bg-[#009675] text-white px-4 py-2.5 sm:px-7 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-[#00A884]/20 whitespace-nowrap"
             id="sticky-whatsapp-btn"
           >
-            <WhatsAppIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 fill-white" />
-            <span>Chat on WhatsApp</span>
+            <WhatsAppIcon className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 fill-white" />
+            <span>
+              <span className="inline sm:hidden">WhatsApp Chat</span>
+              <span className="hidden sm:inline">Chat on WhatsApp</span>
+            </span>
           </a>
         </div>
       </div>

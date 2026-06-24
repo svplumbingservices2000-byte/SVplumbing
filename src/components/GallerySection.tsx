@@ -140,7 +140,7 @@ export default function GallerySection() {
     <div className="space-y-6" id="gallery-content">
 
       {/* CATEGORY FILTER PILLS */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-thin" id="gallery-filters">
+      <div className="w-full flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-thin" id="gallery-filters">
         {categories.map((cat) => {
           const count = cat === "All" ? GALLERY_IMAGES.length : GALLERY_IMAGES.filter((i) => i.category === cat).length;
           return (
