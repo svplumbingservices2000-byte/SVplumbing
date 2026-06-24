@@ -408,36 +408,30 @@ export default function App() {
       </main>
 
       {/* BRAND PERSISTENT FLOATING OVERLAPPING CALL & WHATSAPP WIDGET (Exactly like the uploaded screenshot) */}
-      <div className="fixed inset-x-3 bottom-3 sm:inset-x-auto sm:bottom-6 sm:right-6 z-50 flex flex-row sm:flex-col items-stretch sm:items-end gap-2 sm:gap-0 sm:space-y-3 pointer-events-none" id="floating-brand-widget">
+      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end space-y-2.5 sm:space-y-3 pointer-events-none" id="floating-brand-widget">
         {/* Call Now Button (stacked above WhatsApp, Orange background, black text, with outline phone icon) */}
-        <div className="pointer-events-auto flex-1 sm:flex-none transform hover:scale-105 active:scale-95 transition-all">
+        <div className="pointer-events-auto transform hover:scale-105 active:scale-95 transition-all">
           <a
             href="tel:+918008693712"
-            className="flex items-center justify-center space-x-2 sm:space-x-3 bg-[#FFA000] hover:bg-[#E08F00] text-black px-3 sm:px-7 py-3 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-black/10 whitespace-nowrap"
+            className="flex w-[calc(100vw-1.5rem)] max-w-[330px] sm:w-auto sm:max-w-none items-center justify-center space-x-2 sm:space-x-3 bg-[#FFA000] hover:bg-[#E08F00] text-black px-4 sm:px-7 py-2.5 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-black/10 whitespace-nowrap"
             id="sticky-call-now-btn"
           >
             <Phone className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 text-black stroke-[2.5]" />
-            <span>
-              <span className="inline sm:hidden">Call Now</span>
-              <span className="hidden sm:inline">Call Now: +91 80086 93712</span>
-            </span>
+            <span>Call Now: +91 80086 93712</span>
           </a>
         </div>
 
         {/* WhatsApp Button (slightly shifted right, Green background, white text, with official logo) */}
-        <div className="pointer-events-auto flex-1 sm:flex-none transform hover:scale-105 active:scale-95 transition-all sm:-mt-1 sm:mr-4">
+        <div className="pointer-events-auto transform hover:scale-105 active:scale-95 transition-all -mt-1 mr-2 sm:mr-4">
           <a
             href="https://wa.me/918008693712?text=Hello SV Plumbing! I want to book a plumbing service."
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center space-x-2 sm:space-x-3 bg-[#00A884] hover:bg-[#009675] text-white px-3 sm:px-7 py-3 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-[#00A884]/20 whitespace-nowrap"
+            className="flex w-[calc(100vw-2.5rem)] max-w-[310px] sm:w-auto sm:max-w-none items-center justify-center space-x-2 sm:space-x-3 bg-[#00A884] hover:bg-[#009675] text-white px-4 sm:px-7 py-2.5 sm:py-4 rounded-full text-xs sm:text-base font-black tracking-wide shadow-2xl border border-[#00A884]/20 whitespace-nowrap"
             id="sticky-whatsapp-btn"
           >
             <WhatsAppIcon className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 fill-white" />
-            <span>
-              <span className="inline sm:hidden">WhatsApp</span>
-              <span className="hidden sm:inline">Chat on WhatsApp</span>
-            </span>
+            <span>Chat on WhatsApp</span>
           </a>
         </div>
       </div>
