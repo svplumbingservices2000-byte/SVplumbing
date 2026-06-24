@@ -1,0 +1,6 @@
+{
+  "name": "SV Plumbing Services",
+  "description": "Professional plumbing services in Hyderabad. Instant booking, transparent cost estimates, and real-time AI plumbing assistance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
